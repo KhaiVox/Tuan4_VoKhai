@@ -1,0 +1,31 @@
+﻿@model NhaSach2.Models.Sach
+
+@{
+    ViewBag.Title = "Detail";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Detail</h2>
+
+<div class="row">
+    <div class="col-md-4">
+        <div class="caption">
+            <p>Mã loại: @Html.DisplayFor(model => model.maloai)</p>
+            <p>Tên sách: @Html.DisplayFor(model => model.tensach)</p>
+            <div class="thumbnail">
+                <img src="@Html.DisplayFor(model => model.hinh)" alt="Alternate Text" />
+            </div>
+            <p>Giá bán: @Html.DisplayFor(model => model.giaban)</p>
+            <p>Ngày cập nhật: @Html.DisplayFor(model => model.ngaycapnhat)</p>
+            <p>Số lượng tồn: @Html.DisplayFor(model => model.soluongton)</p>
+            <p>
+                @Html.ActionLink("<", "ListSach", "", new { @class = "btn btn-info" })
+                <a href="#" class="btn btn-primary" role="button">Mua</a>
+            </p>
+        </div>
+    </div>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.masach }) |
+    @Html.ActionLink("Back to List", "ListSach")
+</p>
